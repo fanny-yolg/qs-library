@@ -26,6 +26,20 @@
                 <th scope = "col">Action</th>
             </tr>
         </thead>
+        <tbody>
+        @foreach( $panels as $panel )
+        <tr>
+        <th scope = "row">{{ $loop->iteration}}</th>
+        <td>{{ $panel->users_id}}</td>
+        <td>{{ $panel->books_id}}</td>
+        <td>
+        <form action="/permit/{{ $panel->id }}" method="POST" class='display d-inline'>
+        <button type="submit" class="btn btn-primary">Allow</button>
+        </form>
+        </td>
+        @endforeach
+        </tr>
+        </tbody>
 
     </table>
     </div>

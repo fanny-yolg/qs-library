@@ -13,17 +13,6 @@ class BookController extends Controller
         return view('user', ['books'=>$books]);
     }
 
-    // public function getBookUser()
-    // {
-    //     $books = $this->book->getAll();
-    //     dd($books);
-    //     return view('admin', ['books'=>$books]);
-    // }
-
-    // public function storeBook(Request $request){
-    //     $panels 
-    // }
-
     public function create()
     {
         return view('book.create');

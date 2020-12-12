@@ -38,7 +38,7 @@
 
 
      </table>
-    <!-- <ul class="list-group">
+    <ul class="list-group">
     @foreach($books as $book)
         <li class="list-group-item d-flex justify-content-between align-items-center">
            {{ $book->title }}
@@ -46,7 +46,7 @@
 
         </li>
     @endforeach
-    </ul> -->
+    </ul>
 
     </div>
     </div>

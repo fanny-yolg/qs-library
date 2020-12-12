@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/admin', function () {
-//     return view('admin');
-// })->middleware('isAdmin');
-
 Route::get('/admin', 'App\Http\Controllers\PanelController@index')->middleware('isAdmin');
 
 Auth::routes();
@@ -46,3 +42,5 @@ Route::post('/category', 'App\Http\Controllers\CategoryController@store');
 Route::put('/category/{category}', 'App\Http\Controllers\CategoryController@update');
 Route::get('/category/{category}', 'App\Http\Controllers\CategoryController@edit');
 Route::delete('/category/{category}', 'App\Http\Controllers\CategoryController@destroy');
+
+//Panel 
