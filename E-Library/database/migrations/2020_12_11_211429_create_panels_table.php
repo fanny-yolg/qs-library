@@ -15,8 +15,8 @@ class CreatePanelsTable extends Migration
     {
         Schema::create('panels', function (Blueprint $table) {
             $table->id();
-            $table->bigint('user_id')->unsigned();
-            $table->bigint('book_id');
+            $table->unsignedBigInteger('users_id');
+            $table->unsignedBigInteger('books_id');
             $table->timestamps();
         });
     }

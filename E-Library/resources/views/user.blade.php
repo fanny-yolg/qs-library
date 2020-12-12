@@ -17,6 +17,7 @@
         <th scope = "col">Title</th>
         <th scope = "col">Author</th>
         <th scope = "col">Synopsis</th>
+        <th scope = "col">Category</th>
         <th scope = "col">Action</th>
      </tr>
      </thead>
@@ -27,8 +28,11 @@
         <td>{{ $bk->title}}</td>
         <td>{{ $bk->author}}</td>
         <td>{{ $bk->synopsis}}</td>
+        <td>{{ $bk->categories_id}}</td>
         <td>
-            <a href="" class="badge-success">borrow this book</a>
+        <form action="/book/{{ $bk->id }}" method="POST" class='display d-inline'>
+        <button type="submit" class="btn btn-primary">Borrow this book</button>
+        </form>
         </td>
         @endforeach
     </tr>

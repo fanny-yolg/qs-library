@@ -27,7 +27,10 @@
     <label for="Synopsis">Synopsis</label>
     <input type="text" class="form-control" id="synopsis" placeholder="Please insert the synopsis..." name="synopsis" value="{{ $book->synopsis }}">
   </div>
-
+  <div class="form-group">
+    <label for="categories_id">Category</label>
+    <input type="text" class="form-control" id="categories_id" placeholder="Please insert the synopsis..." name="categories_id" value="{{ $book->categories_id }}">
+  </div>
   <button type="submit" class="btn btn-primary my-3">Edit Book..?</button>
 </form>
 

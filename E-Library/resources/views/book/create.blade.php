@@ -23,8 +23,12 @@
     <input type="text" class="form-control" id="author" placeholder="Please insert the author..." name="author">
   </div>
   <div class="form-group">
-    <label for="Picture">Synopsis</label>
+    <label for="synopsis">Synopsis</label>
     <input type="text" class="form-control" id="synopsis" placeholder="Please insert the synopsis..." name="synopsis">
+  </div>
+  <div class="form-group">
+    <label for="categories_id">Category</label>
+    <input type="text" class="form-control" id="categories_id" placeholder="Please insert the category..." name="categories_id">
   </div>
 
   <button type="submit" class="btn btn-primary my-3">Add Book..?</button>

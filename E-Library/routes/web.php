@@ -17,23 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', function () {
-    return view('admin');
-})->middleware('isAdmin');
+// Route::get('/admin', function () {
+//     return view('admin');
+// })->middleware('isAdmin');
 
-// Route::get('/user', function () {
-//     return view('user');
-// })->middleware('auth');
+Route::get('/admin', 'App\Http\Controllers\PanelController@index')->middleware('isAdmin');
 
 Auth::routes();
 
 Route::get('/user', 'App\Http\Controllers\BookController@index')->middleware('auth');
 
-
 // Book CRUD for Admin
-Route::get('/book/create', 'App\Http\Controllers\BookController@create');
+Route::get('/book/create', 'App\Http\Controllers\BookController@create')->middleware('isAdmin');
 Route::get('/books/admin', 'App\Http\Controllers\BookController@database')->middleware('isAdmin');
-Route::post('/books', 'App\Http\Controllers\BookController@store');
+Route::post('/books', 'App\Http\Controllers\BookController@store')->middleware('isAdmin');
 
 Route::get('book/{book}/edit', 'App\Http\Controllers\BookController@edit');
 Route::get('/book/{book}', 'App\Http\Controllers\BookController@show');
@@ -42,4 +39,10 @@ Route::put('/books/{book}', 'App\Http\Controllers\BookController@update');
 Route::delete('/book/{book}', 'App\Http\Controllers\BookController@destroy');
 
 
-//User 
+//Category  
+Route::get('/categories', 'App\Http\Controllers\CategoryController@index');
+Route::get('/category/form', 'App\Http\Controllers\CategoryController@create');
+Route::post('/category', 'App\Http\Controllers\CategoryController@store');
+Route::put('/category/{category}', 'App\Http\Controllers\CategoryController@update');
+Route::get('/category/{category}', 'App\Http\Controllers\CategoryController@edit');
+Route::delete('/category/{category}', 'App\Http\Controllers\CategoryController@destroy');

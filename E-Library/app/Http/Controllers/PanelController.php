@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Panel;
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Book;
 
 class PanelController extends Controller
 {
@@ -12,9 +14,14 @@ class PanelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
-        //
+        $users = User::get();
+        return view('admin', ['users' => $users]);
+        // $panels = Panel::get();
+        // dd($panels);
+    	// return view('admin', ['panels' => $panels]);
     }
 
     /**
@@ -33,9 +40,17 @@ class PanelController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $book = Book::where('id', $book->id);
+
+        $panel = new Panel;
+        $panel->users_id = $user->id;
+        $panel->books_id = $book->id;
+        // $panel Save();
+
+        dd($panel);
+        
     }
 
     /**
